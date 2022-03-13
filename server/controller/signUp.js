@@ -1,1 +1,0 @@
-const { signUpSchema } = require('../validation');
