@@ -7,7 +7,7 @@
   <title>login</title>
 </head>
 <body>
-  <form method="post">
+  <form class="login">
     <div class="email">
       <label for="email">email: </label>
       <input type="email" name="email" placeholder="Enter Your email:" id="email">
@@ -16,7 +16,9 @@
       <label for="password">password: </label>
       <input type="password" name="password" placeholder="Enter Your Password:" id="password">
     </div>
-    <button>login</button>
+    <button type="submit">login</button>
   </form>
+  <div class="errorMsg"></div>
+  <script src="../js/login.js"></script>
 </body>
 </html>
