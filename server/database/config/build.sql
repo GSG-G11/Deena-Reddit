@@ -11,7 +11,10 @@ CREATE TABLE users (
 
 CREATE TABLE posts (
   id SERIAL  PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
   post TEXT NOT NULL,
+  communities VARCHAR(125),
+  vote INT ,
   date date ,
   user_id INT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(id)
