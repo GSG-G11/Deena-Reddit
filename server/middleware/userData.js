@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 const { verify } = require('jsonwebtoken');
 
 const userData = (request, response) => {
