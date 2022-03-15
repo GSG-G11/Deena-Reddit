@@ -15,7 +15,7 @@ CREATE TABLE posts (
   post TEXT NOT NULL,
   communities VARCHAR(125),
   vote INT ,
-  date date ,
+  date TIMESTAMP default NOW(),
   user_id INT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
