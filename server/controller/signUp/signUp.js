@@ -22,8 +22,7 @@ const signUp = (req, res, next) => {
     })
     // eslint-disable-next-line consistent-return
     .catch((error) => {
-      if (error.status) return res.status(error.status).json(error.message);
-      next();
+      next(res.status(error.status).json(error.message));
     });
 };
 module.exports = signUp;
