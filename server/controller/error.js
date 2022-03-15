@@ -5,8 +5,8 @@ const clientError = (req, res, next) => {
 };
 
 const serverError = (err, req, res, next) => {
-  if (err.status === 400) {
-    res.json({ message: err.message, status: 400 });
+  if (err.status) {
+    res.json({ message: err.message, status: err.status });
   } else {
     res.status(500).sendFile(join(__dirname, '..', '..', 'public', 'html', '500.html'));
   }
