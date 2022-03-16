@@ -13,27 +13,27 @@ fetch('/api/v1/allPosts')
       const post = document.createElement('p');
       const vote = document.createElement('p');
       const inc = document.createElement('button');
-      const desc = document.createElement('button');
-      // vote.textContent = element.id;
-      inc.addEventListener('click', () => {
+      const dec = document.createElement('button');
+
+      inc.addEventListener('click', (e) => {
+        e.preventDefault();
         fetch(`/increaseVote/${element.id}`)
-        .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            // c += 1;
-            // vote.textContent = c;
-            // console.log(c);
-          });
-          // .then(() => console.log(element.vote));
+          .then((res) => res.json())
+          .then((value) => {
+            vote.textContent = value.vote;
+          }).catch((err) => console.log(err));
       });
-      desc.addEventListener('click', () => {
-        // c -= 1;
-        // vote.textContent = c;
-        // console.log(c);
+      dec.addEventListener('click', (e) => {
+        e.preventDefault();
+        fetch(`/decreaseVote/${element.id}`)
+          .then((res) => res.json())
+          .then((value) => {
+            vote.textContent = value.vote;
+          }).catch((err) => console.log(err));
       });
       inc.setAttribute('class', 'inc');
       inc.textContent = 'inc';
-      desc.textContent = 'desc';
+      dec.textContent = 'dec';
       a.href = `/profile/${element.user_id}`;
       userName.textContent = element.name;
       date.textContent = element.date;
@@ -46,7 +46,7 @@ fetch('/api/v1/allPosts')
       div.appendChild(post);
       div.appendChild(inc);
       div.appendChild(vote);
-      div.appendChild(desc);
+      div.appendChild(dec);
       posts.appendChild(div);
     });
   })
