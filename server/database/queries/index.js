@@ -8,6 +8,8 @@ const voteIncrease = require('./posts/voteIncrease');
 const displayPostsOrderByVote = require('./posts/displayPostsOrderByVote');
 const displayAllPostsQuery = require('./posts/displayAllPostsQuery');
 const displayPostsById = require('./posts/displayPostsById');
+const selectComments = require('./comments/selectComments');
+const insertComment = require('./comments/insertComment');
 
 module.exports = {
   addUserQuery,
@@ -20,4 +22,6 @@ module.exports = {
   displayPostsOrderByVote,
   displayAllPostsQuery,
   displayPostsById,
+  selectComments,
+  insertComment,
 };

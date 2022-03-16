@@ -10,6 +10,7 @@ const getAllPostsById = require('./posts/getAllPostsById');
 const getProfile = require('./profile/getProfile');
 const decreaseVote = require('./posts/decreaseVote');
 const increaseVote = require('./posts/increaseVote');
+const addComment = require('./comments/addComment');
 
 module.exports = {
   signUp,
@@ -25,6 +26,7 @@ module.exports = {
   decreaseVote,
   increaseVote,
   getProfile,
+  addComment,
   clientError,
   serverError,
 };
