@@ -16,14 +16,13 @@ const signUp = (req, res, next) => {
     .then(({ rows }) => {
       sign({ id: rows[0].id }, process.env.SECRET_KEY, (error, token) => {
         if (error) throw CustomizedError({ msg: 'Hash Function Error', status: 400 });
-        res.cookie('id', rows[0].id);
+        res.cookie('userName', rows[0].name);
         res.status(201).cookie('token', token).json({ message: 'Sign in successfully' });
       });
     })
     // eslint-disable-next-line consistent-return
     .catch((error) => {
-      if (error.status) return res.status(error.status).json(error.message);
-      next();
+      next(res.status(error.status).json(error.message));
     });
 };
 module.exports = signUp;

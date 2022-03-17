@@ -21,6 +21,7 @@ form.addEventListener('submit', (e) => {
         window.location = '/';
       } else {
         textError.textContent = data;
+        textError.style.color = 'red';
       }
     })
     .catch((error) => {

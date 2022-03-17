@@ -1,8 +1,16 @@
-/* eslint-disable no-console */
 const allContent = document.querySelector('.allContent');
 const buttons = document.querySelector('#buttons');
+const id = window.location.pathname.split('/')[2];
 
-fetch('/api/v1/allPosts')
+const deletePost = (postId) => fetch(`/post/${postId}`, {
+  method: 'DELETE',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  redirect: 'follow',
+});
+
+fetch(`/api/v1/getAllPostsById/${id}`)
   .then((response) => response.json())
   .then((data) => {
     data.forEach((element) => {
@@ -60,9 +68,11 @@ fetch('/api/v1/allPosts')
       });
 
       profileLink.href = `/profile/${element.user_id}`;
+
       userName.textContent = element.name;
       title.textContent = element.title;
       content.textContent = element.post;
+
       votes.appendChild(arrowUp);
       votes.appendChild(vote);
       votes.appendChild(arrowDown);
@@ -75,6 +85,25 @@ fetch('/api/v1/allPosts')
       icons.appendChild(shareIcon);
       icons.appendChild(saveIcon);
       icons.appendChild(span);
+      fetch('/userData')
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.id === element.user_id) {
+            const remove = document.createElement('i');
+            remove.textContent = '  delete';
+            remove.setAttribute('class', 'fa fa-times');
+            remove.title = 'Delete';
+            icons.appendChild(remove);
+            remove.addEventListener('click', () => {
+              deletePost(element.id)
+                .then(() => {
+                  window.location = `/profile/${element.user_id}`;
+                });
+            });
+          }
+        })
+        .catch((error) => console.log(error));
+
       comment.appendChild(icons);
       posts.appendChild(votes);
       posts.appendChild(comment);
@@ -105,18 +134,13 @@ if (token) {
   icon.setAttribute('class', 'fa fa-plus');
   icon.title = 'create post';
   a.href = '/addPost';
-  const logout = document.createElement('a');
+  const logout = document.createElement('button');
   logout.textContent = 'Log Out';
-  logout.href = '/logout';
   logout.setAttribute('class', 'logout');
-  logout.style.marginTop = '8px';
+
   const user = document.createElement('span');
-  fetch('/userData')
-    .then((res) => res.json())
-    .then((result) => {
-      user.textContent = result.userName;
-      user.setAttribute('class', 'userName');
-    });
+  user.textContent = 'Deena';
+  user.setAttribute('class', 'userName');
   a.appendChild(icon);
   buttons.appendChild(a);
   buttons.appendChild(logout);

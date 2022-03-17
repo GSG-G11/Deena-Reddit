@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, commints, posts CASCADE;
+DROP TABLE IF EXISTS users, comments, posts CASCADE;
 
 CREATE TABLE users (
   id SERIAL  PRIMARY KEY,
@@ -14,18 +14,20 @@ CREATE TABLE posts (
   title VARCHAR(255) NOT NULL,
   post TEXT NOT NULL,
   communities VARCHAR(125),
-  vote INT ,
-  date date ,
+  vote INT default 0,
+  date TIMESTAMP default NOW(),
   user_id INT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE commints (
+CREATE TABLE comments (
   id SERIAL  PRIMARY KEY,
-  commint TEXT NOT NULL,
-  date date ,
+  content TEXT NOT NULL,
+  date TIMESTAMP default NOW(),
+  post_id INT NOT NULL,
   user_id INT NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES posts(id)
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (post_id) REFERENCES posts(id)
 );
 
 COMMIT;

@@ -14,7 +14,7 @@ const login = (req, res, next) => {
           if (isMatch) {
             sign({ id: data.rows[0].id }, process.env.SECRET_KEY, (error, token) => {
               if (error) throw CustomizedError({ msg: 'Hash Function Error', status: 400 });
-              return res.status(200).cookie('token', token).cookie('id', data.rows[0].id).json({ message: 'Log in successfully' });
+              return res.status(200).cookie('token', token).cookie('userName', data.rows[0].name).json({ message: 'Log in successfully' });
             });
           } else {
             throw CustomizedError({ msg: 'error in password or email', status: 400 });

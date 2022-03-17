@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/posts.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="shortcut icon" href="../favoico.ico/favoico.png" type="image/x-icon" />
-  <title>add post</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>profile</title>
 </head>
 <body>
   <div class="mainPage">
@@ -35,7 +35,8 @@
       </a>
       <div class="form">
         <i class="fa fa-search"></i>
-        <input type="text" class="search" placeholder="  Search Reddit">        
+        <input type="text" class="search" placeholder="  Search Reddit">
+        
       </div>
       <div class="btn" id="buttons">
         <button class="login "><a href="/login">Log In</a></button>
@@ -44,25 +45,10 @@
       </div>
     </div>
   </div>
-<div class="container">
-  <div class="createPost">
-  <p class="text">Create a post</p>
-  <form class="addPost" method="post">
-    <div class="title">
-      <!-- <label for="title">title</label> -->
-      <input type="text" name="title" id="title" placeholder="Title" >
-    </div>
-    <div class="post">
-      <!-- <label for="post">post</label><br> -->
-      <textarea name="post" id="post" cols="30" rows="10" placeholder="Text (optional)"></textarea>
-    </div>
-    <button type="submit" id="btn">add post</button>
-  </form>
-  <p class="msg"></p>
-</div>
-</div>
 
-
-  <script src="../js/post.js"></script>
+  <div class="container">
+  <div class="allContent"></div>
+</div>
+  <script src="../js/profile.js"></script>
 </body>
 </html>

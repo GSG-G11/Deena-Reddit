@@ -120,131 +120,51 @@ body {
 }
 
 .container {
-  width: 73%;
+  width: 67%;
   height: 400px;
   margin: auto;
   height:auto;
   max-width: 1020px;
 }
 
-.trending {
-  display: flex;
+.createPost {
+  margin: 15px 0px;
+  padding: 10px 40px;
+  background-color: #fff;
+  border: 1px solid #c2c2c2;
+  border-radius: 5px;
 }
 
-.trending div{
-  position: relative;
-  width: 25%;  
-}
-
-.trend img {
-  width: 238px; 
-  height: 178px ;
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  opacity: 0.8;
-}
-
-.trend .content {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: rgb(0, 0, 0);
-}
-
-.content .title {
-  font-size: 18px;
-}
-
-.content .text {
-  overflow: hidden;
-  font-size: 14px;
-  line-height: 20px;
-  max-height: 40px;
-}
-
-.popularPosts {
-  display: flex;
-  width: 67%;
-  justify-content: space-around;
-  padding: 10px 12px; 
-  margin-bottom: 16px;
-  background-color:white ;
-  border: 1px solid #ccc;
+.createPost input[type="text"] {
+  width: 630px;
+  height: 30px;
+  margin: 8px;
+  background-color: #f6f7f8;
   border-radius: 4px;
-  box-sizing: border-box;
-  align-items: center;
+  border: 1px solid #c2c2c2;
+  padding-left: 20px;
+  outline: none;
 }
 
-.hot , .everywhere{
+.createPost textarea {
+  width: 630px;
+  height: 125px;
+  margin: 8px;
+  background-color: #f6f7f8;
+  border-radius: 4px;
+  border: 1px solid #c2c2c2;
+  padding-left: 20px;
+  padding-top: 10px ;
+  outline: none;
+}
+
+#btn {
+  background-color: #848484;
+  color: #c2c2c2;
+  width: 80px;
+  height: 36px;
+  border-radius: 50%;
+  outline: none;
   border: none;
-  background-color:#f6f7f8 ;
-  border-radius: 9999px;
-  color: #2c79d3;
-  font-weight: bold;
-}
-
-.news, .top {
-  color: #878a8c;
-  font-weight: bold;
-}
-
-.posts {
-  width: 67%;
-  background-color: white;
-  display: flex;
-  margin-bottom: 15px;
-}
-
-.posts .votes {
-  background-color: #f7f9fa;
-  width: 50px;
-  display: inline-block;
-}
-
-.votes i {
-  padding: 8px;
-}
-
-.votes span {
-  display: inline-block;
-  margin-left: 10.5px;
-}
-
-.comment {
-  margin-left: 15px;
-  padding: 20px 0;
-}
-
-.comment a {
-  color: black;
-}
-
-.userName {
-  display: inline-block;
-  width: auto;
-  height: 25px;
-  font-size: 20px;
-}
-
-.comment .date {
-  display: inline-block;
-  margin-left: 80px;
-}
-
-.comment .icons {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.comment .icons i {
-  margin: 0 15px;
-}
-
-.comment .content {
-  margin-bottom: 30px;
-}
-
-.allContent {
-  margin: 15px 0;
+  margin-left: 550px;
 }
