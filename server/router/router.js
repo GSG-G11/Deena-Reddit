@@ -13,6 +13,7 @@ const {
   increaseVote,
   decreaseVote,
   addComment,
+  logout,
   clientError,
   serverError,
 } = require('../controller');
@@ -30,6 +31,7 @@ router.route('/decreaseVote/:id').get(auth, decreaseVote);
 router.route('/userData').get(userData);
 router.route('/post/:id').delete(auth, deletePost);
 router.route('/addComment/:id').get(auth, addComment);
+router.get('/logout', logout);
 router.use(clientError);
 router.use(serverError);
 
