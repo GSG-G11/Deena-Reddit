@@ -138,10 +138,6 @@ if (token) {
   logout.textContent = 'Log Out';
   logout.setAttribute('class', 'logout');
 
-  logout.addEventListener('click', () => {
-    document.cookie = 'token=; exires=Thu, 01 Jan 1970 00:00:01 GMT';
-    window.location.assign('/');
-  });
   const user = document.createElement('span');
   user.textContent = 'Deena';
   user.setAttribute('class', 'userName');
