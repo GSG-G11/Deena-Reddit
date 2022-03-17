@@ -10,6 +10,7 @@ const displayAllPostsQuery = require('./posts/displayAllPostsQuery');
 const displayPostsById = require('./posts/displayPostsById');
 const selectComments = require('./comments/selectComments');
 const insertComment = require('./comments/insertComment');
+const getPosts = require('./comments/getPosts');
 
 module.exports = {
   addUserQuery,
@@ -24,4 +25,5 @@ module.exports = {
   displayPostsById,
   selectComments,
   insertComment,
+  getPosts,
 };
