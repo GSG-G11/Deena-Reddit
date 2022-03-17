@@ -1,10 +1,10 @@
+/* eslint-disable no-console */
 const allContent = document.querySelector('.allContent');
 const buttons = document.querySelector('#buttons');
 
 fetch('/api/v1/allPosts')
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     data.forEach((element) => {
       const posts = document.createElement('div');
       const votes = document.createElement('div');
