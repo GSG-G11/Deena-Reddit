@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const form = document.querySelector('.login');
 const emailInput = document.querySelector('#email');
 const passInput = document.querySelector('#password');
@@ -19,6 +20,7 @@ form.addEventListener('submit', (e) => {
         window.location = '/';
       } else {
         errorMsg.textContent = data;
+        errorMsg.style.color = 'red';
       }
     }).catch((error) => {
       console.log(error);
