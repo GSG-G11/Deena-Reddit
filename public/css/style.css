@@ -38,6 +38,27 @@ body {
   background-color: white;
 }
 
+.line-item {
+	display: flex;
+	gap: 24px;
+}
+.item-description {
+	display: flex;
+	padding-top: 6px;
+	gap: 8px;
+	color: #7b7b7b;
+}
+.comment1 {
+	margin-top: 12px;
+	color: #3d3d3d;
+	border: 1px solid #e3e3e3;
+	box-shadow: 0 4px 4px 0 #f4f6f8;
+	border-radius: 6px;
+	padding: 16px;
+	font-size: 1rem;
+}
+
+
 .form {
   margin: 0px 75px;
   position: relative;

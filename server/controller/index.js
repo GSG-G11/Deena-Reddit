@@ -12,6 +12,9 @@ const decreaseVote = require('./posts/decreaseVote');
 const increaseVote = require('./posts/increaseVote');
 const addComment = require('./comments/addComment');
 const logout = require('./logout');
+const displayPost = require('./comments/displayPost');
+const comments = require('./comments/comments');
+const getAllComments = require('./comments/getAllComments');
 
 module.exports = {
   signUp,
@@ -29,6 +32,9 @@ module.exports = {
   getProfile,
   addComment,
   logout,
+  displayPost,
+  comments,
+  getAllComments,
   clientError,
   serverError,
 };

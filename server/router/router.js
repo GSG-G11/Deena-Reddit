@@ -14,7 +14,10 @@ const {
   decreaseVote,
   addComment,
   logout,
+  comments,
+  displayPost,
   clientError,
+  getAllComments,
   serverError,
 } = require('../controller');
 const auth = require('../middleware/auth');
@@ -30,8 +33,11 @@ router.route('/increaseVote/:id').get(auth, increaseVote);
 router.route('/decreaseVote/:id').get(auth, decreaseVote);
 router.route('/userData').get(userData);
 router.route('/post/:id').delete(auth, deletePost);
-router.route('/addComment/:id').get(auth, addComment);
+router.route('/addComment/:id').post(auth, addComment);
 router.get('/logout', logout);
+router.get('/api/v1/displayPost/:id', displayPost);
+router.get('/displayPost/:id', comments);
+router.get('/getAllComments/:id', getAllComments);
 router.use(clientError);
 router.use(serverError);
 
