@@ -8,7 +8,7 @@ const userData = (request, response) => {
     return verify(token, process.env.SECRET_KEY, (err, verifyCookies) => {
       if (err) return response.redirect('/');
       request.id = verifyCookies.id;
-      response.json({ id: verifyCookies.id });
+      response.json({ id: verifyCookies.id, userName: request.cookies.userName });
     });
   }
 };
