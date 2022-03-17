@@ -165,7 +165,6 @@ input[type="submit"] {
 
 :root {
   --loginBorderRadus: 0.25rem;
-  --loginColor: #eee;
 
   --loginInputBackgroundColor: #3b4148;
   --loginInputHoverBackgroundColor: #434a52;
